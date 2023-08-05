@@ -11,7 +11,7 @@ class Solution {
         ArrayList<Integer> prev = new ArrayList<Integer>();
         prev.add(1);
         list.add(prev);
-        for (int i = 2; i <= numRows; i++) {
+        for (int i = 1; i < numRows; i++) {
             ArrayList<Integer> curr = new ArrayList<Integer>();
             curr.add(1);
             for (int j = 0; j < prev.size() - 1; j++) {
