@@ -2,7 +2,7 @@
  * [238] Product of Array Except Self
  */
 
- class Solution {
+class Solution {
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         
