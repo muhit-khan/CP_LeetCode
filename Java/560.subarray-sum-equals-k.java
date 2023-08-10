@@ -7,16 +7,14 @@ class Solution {
     public int subarraySum(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         int count = 0, sum = 0;
+        map.put(0, 1);
         for (int i = 0; i < nums.length; i++) {
-            map.put(nums[i], map.getOrDefault(nums[i], 0)+1);
             sum += nums[i];
-            if (sum==k) {
-                count++;
-            } else if(map.containsKey(sum-k)){
-                count+=map.get(nums[i]);
+            if (map.containsKey(sum - k)) {
+                count += map.get(sum - k);
             }
+            map.put(sum, map.getOrDefault(sum, 0) + 1);
         }
         return count;
     }
 }
-
