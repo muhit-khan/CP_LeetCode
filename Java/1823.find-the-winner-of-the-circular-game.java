@@ -1,14 +1,20 @@
 /*
- * @lc app=leetcode id=1823 lang=java
- *
  * [1823] Find the Winner of the Circular Game
  */
 
-// @lc code=start
 class Solution {
     public int findTheWinner(int n, int k) {
-        
+        Queue<Integer> arr = new LinkedList<>();
+        for(int i=1; i<=n; i++){
+            arr.add(i);
+        }
+
+        while(arr.size() != 1){
+            for(int i=0; i<k-1; i++){
+                arr.add(arr.poll());
+            }
+            arr.poll();
+        }
+        return arr.poll();
     }
 }
-// @lc code=end
-
